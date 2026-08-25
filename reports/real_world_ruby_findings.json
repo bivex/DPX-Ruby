@@ -1,0 +1,421 @@
+{
+  "target_path": "benchmarks/real_world/helpers.rb",
+  "scanned_files_count": 4,
+  "execution_time_seconds": 0.0044,
+  "total_detections": 17,
+  "category_counts": {
+    "ruby_idiomatic": 8,
+    "metaprogramming": 8,
+    "creational": 1
+  },
+  "detections": [
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Devise",
+      "location": {
+        "file_path": "benchmarks/real_world/helpers.rb",
+        "line_number": 2,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Devise' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/helpers.rb:2:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Controllers",
+      "location": {
+        "file_path": "benchmarks/real_world/helpers.rb",
+        "line_number": 4,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Controllers' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/helpers.rb:4:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Helpers",
+      "location": {
+        "file_path": "benchmarks/real_world/helpers.rb",
+        "line_number": 6,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Helpers' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/helpers.rb:6:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Devise",
+      "location": {
+        "file_path": "benchmarks/real_world/authenticatable.rb",
+        "line_number": 5,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Devise' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/authenticatable.rb:5:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Models",
+      "location": {
+        "file_path": "benchmarks/real_world/authenticatable.rb",
+        "line_number": 7,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Models' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/authenticatable.rb:7:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Authenticatable",
+      "location": {
+        "file_path": "benchmarks/real_world/authenticatable.rb",
+        "line_number": 55,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Authenticatable' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/authenticatable.rb:55:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "ActiveSupport",
+      "location": {
+        "file_path": "benchmarks/real_world/concern.rb",
+        "line_number": 3,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'ActiveSupport' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/concern.rb:3:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Concern",
+      "location": {
+        "file_path": "benchmarks/real_world/concern.rb",
+        "line_number": 124,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Concern' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/real_world/concern.rb:124:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "dynamic_dispatch_send",
+      "category": "metaprogramming",
+      "target_name": "DynamicDispatch",
+      "location": {
+        "file_path": "benchmarks/real_world/helpers.rb",
+        "line_number": 177,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Metaprogramming dynamic message dispatch at runtime via send or public_send.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_DYNAMIC_DISPATCH",
+          "weight": 0.9,
+          "description": "Dynamic message dispatch at runtime via send/public_send in line: 'context = router_name ? send(router_name) : self'",
+          "location": "benchmarks/real_world/helpers.rb:177:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "dynamic_dispatch_send",
+      "category": "metaprogramming",
+      "target_name": "DynamicDispatch",
+      "location": {
+        "file_path": "benchmarks/real_world/helpers.rb",
+        "line_number": 180,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Metaprogramming dynamic message dispatch at runtime via send or public_send.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_DYNAMIC_DISPATCH",
+          "weight": 0.9,
+          "description": "Dynamic message dispatch at runtime via send/public_send in line: 'context.send(home_path)'",
+          "location": "benchmarks/real_world/helpers.rb:180:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "dynamic_dispatch_send",
+      "category": "metaprogramming",
+      "target_name": "DynamicDispatch",
+      "location": {
+        "file_path": "benchmarks/real_world/helpers.rb",
+        "line_number": 230,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Metaprogramming dynamic message dispatch at runtime via send or public_send.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_DYNAMIC_DISPATCH",
+          "weight": 0.9,
+          "description": "Dynamic message dispatch at runtime via send/public_send in line: 'context = router_name ? send(router_name) : self'",
+          "location": "benchmarks/real_world/helpers.rb:230:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "dynamic_dispatch_send",
+      "category": "metaprogramming",
+      "target_name": "DynamicDispatch",
+      "location": {
+        "file_path": "benchmarks/real_world/authenticatable.rb",
+        "line_number": 194,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Metaprogramming dynamic message dispatch at runtime via send or public_send.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_DYNAMIC_DISPATCH",
+          "weight": 0.9,
+          "description": "Dynamic message dispatch at runtime via send/public_send in line: 'message = devise_mailer.send(notification, self, *args)'",
+          "location": "benchmarks/real_world/authenticatable.rb:194:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "dynamic_dispatch_send",
+      "category": "metaprogramming",
+      "target_name": "DynamicDispatch",
+      "location": {
+        "file_path": "benchmarks/real_world/authenticatable.rb",
+        "line_number": 215,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Metaprogramming dynamic message dispatch at runtime via send or public_send.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_DYNAMIC_DISPATCH",
+          "weight": 0.9,
+          "description": "Dynamic message dispatch at runtime via send/public_send in line: 'new_value = send(attr).try(method)'",
+          "location": "benchmarks/real_world/authenticatable.rb:215:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "constant_lookup_resolution",
+      "category": "metaprogramming",
+      "target_name": "const_get",
+      "location": {
+        "file_path": "benchmarks/real_world/concern.rb",
+        "line_number": 149,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Dynamic constant reflection resolving class types at runtime via const_get.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_CONSTANT_LOOKUP",
+          "weight": 0.9,
+          "description": "Dynamic constant reflection lookup in line: 'base.extend const_get(:ClassMethods) if const_defined?(:ClassMethods)'",
+          "location": "benchmarks/real_world/concern.rb:149:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "constant_lookup_resolution",
+      "category": "metaprogramming",
+      "target_name": "const_get",
+      "location": {
+        "file_path": "benchmarks/real_world/concern.rb",
+        "line_number": 162,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Dynamic constant reflection resolving class types at runtime via const_get.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_CONSTANT_LOOKUP",
+          "weight": 0.9,
+          "description": "Dynamic constant reflection lookup in line: 'base.singleton_class.prepend const_get(:ClassMethods) if const_defined?(:ClassMethods)'",
+          "location": "benchmarks/real_world/concern.rb:162:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "constant_lookup_resolution",
+      "category": "metaprogramming",
+      "target_name": "const_get",
+      "location": {
+        "file_path": "benchmarks/real_world/concern.rb",
+        "line_number": 225,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Dynamic constant reflection resolving class types at runtime via const_get.",
+      "evidence": [
+        {
+          "rule_name": "METAPROGRAMMING_CONSTANT_LOOKUP",
+          "weight": 0.9,
+          "description": "Dynamic constant reflection lookup in line: 'const_get(:ClassMethods) :'",
+          "location": "benchmarks/real_world/concern.rb:225:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "prototype_dup_clone",
+      "category": "creational",
+      "target_name": "dup/clone",
+      "location": {
+        "file_path": "benchmarks/real_world/authenticatable.rb",
+        "line_number": 107,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Prototype pattern creating object duplicates via dup or clone.",
+      "evidence": [
+        {
+          "rule_name": "CREATIONAL_PROTOTYPE_DUP",
+          "weight": 0.9,
+          "description": "Prototype pattern duplicating object instance in line: 'options[:except] = Array(options[:except]).dup'",
+          "location": "benchmarks/real_world/authenticatable.rb:107:1"
+        }
+      ]
+    }
+  ]
+}

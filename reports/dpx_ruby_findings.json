@@ -1,0 +1,399 @@
+{
+  "target_path": "benchmarks/ecommerce_platform.rb",
+  "scanned_files_count": 1,
+  "execution_time_seconds": 0.0012,
+  "total_detections": 16,
+  "category_counts": {
+    "ruby_idiomatic": 3,
+    "enterprise_rails": 3,
+    "structural": 2,
+    "behavioral": 2,
+    "security_hazards": 6
+  },
+  "detections": [
+    {
+      "pattern_type": "activesupport_concern",
+      "category": "ruby_idiomatic",
+      "target_name": "Auditable",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 2,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_ACTIVESUPPORT_CONCERN",
+          "weight": 0.95,
+          "description": "Module 'Auditable' implements ActiveSupport::Concern mixin with dependency resolution",
+          "location": "benchmarks/ecommerce_platform.rb:2:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "data_class_define",
+      "category": "ruby_idiomatic",
+      "target_name": "OrderData",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 15,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Immutable value object declaration using Ruby 3.2+ Data.define.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_DATA_CLASS_DEFINE",
+          "weight": 0.95,
+          "description": "Ruby 3.2+ Data.define immutable value object: 'OrderData'",
+          "location": "benchmarks/ecommerce_platform.rb:15:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "refinement_scoped_extension",
+      "category": "ruby_idiomatic",
+      "target_name": "String",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 18,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.92,
+        "percentage": 92,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Lexically scoped monkey-patching avoiding global namespace collision.",
+      "evidence": [
+        {
+          "rule_name": "RUBY_REFINEMENT_SCOPED_EXTENSION",
+          "weight": 0.92,
+          "description": "Lexically scoped monkey-patch refinement on 'String'",
+          "location": "benchmarks/ecommerce_platform.rb:18:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "service_object_interactor",
+      "category": "enterprise_rails",
+      "target_name": "ProcessOrderService",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 50,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Encapsulated business workflow following Single Responsibility Principle with standard call method.",
+      "evidence": [
+        {
+          "rule_name": "ENTERPRISE_SERVICE_OBJECT",
+          "weight": 0.95,
+          "description": "Class 'ProcessOrderService' implements Service / Interactor Object encapsulating single business operation",
+          "location": "benchmarks/ecommerce_platform.rb:50:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "dry_monad_transaction",
+      "category": "enterprise_rails",
+      "target_name": "DryMonads",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 52,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Railway-oriented programming using Dry::Monads Result (Success/Failure) and Do notation.",
+      "evidence": [
+        {
+          "rule_name": "ENTERPRISE_DRY_MONAD",
+          "weight": 0.95,
+          "description": "Railway-oriented programming with Dry::Monads in line: 'include Dry::Monads[:result, :do]'",
+          "location": "benchmarks/ecommerce_platform.rb:52:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "decorator_presenter",
+      "category": "enterprise_rails",
+      "target_name": "OrderPresenter",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 90,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.92,
+        "percentage": 92,
+        "level": "VERY_HIGH"
+      },
+      "summary": "View logic isolation wrapping models in presenter decorators (Draper / SimpleDelegator).",
+      "evidence": [
+        {
+          "rule_name": "ENTERPRISE_PRESENTER_DECORATOR",
+          "weight": 0.92,
+          "description": "Class 'OrderPresenter' isolates presentation logic from model objects",
+          "location": "benchmarks/ecommerce_platform.rb:90:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "simple_delegator_decorator",
+      "category": "structural",
+      "target_name": "OrderPresenter",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 90,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.92,
+        "percentage": 92,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator.",
+      "evidence": [
+        {
+          "rule_name": "STRUCTURAL_SIMPLE_DELEGATOR",
+          "weight": 0.92,
+          "description": "Class 'OrderPresenter' implements Decorator pattern delegating unhandled calls via 'SimpleDelegator'",
+          "location": "benchmarks/ecommerce_platform.rb:90:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "gateway_adapter_wrapper",
+      "category": "structural",
+      "target_name": "StripeGateway",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 83,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.92,
+        "percentage": 92,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Adapter pattern adapting external third-party API payloads to domain interfaces.",
+      "evidence": [
+        {
+          "rule_name": "STRUCTURAL_GATEWAY_ADAPTER",
+          "weight": 0.92,
+          "description": "Class 'StripeGateway' acts as Adapter adapting external API protocol to domain interfaces",
+          "location": "benchmarks/ecommerce_platform.rb:83:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "command_active_job",
+      "category": "behavioral",
+      "target_name": "OrderFulfillmentJob",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 96,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Command pattern encapsulating asynchronous job execution and background workflows.",
+      "evidence": [
+        {
+          "rule_name": "BEHAVIORAL_COMMAND_ACTIVE_JOB",
+          "weight": 0.95,
+          "description": "Class 'OrderFulfillmentJob' encapsulates background Command pattern execution (ActiveJob / Sidekiq)",
+          "location": "benchmarks/ecommerce_platform.rb:96:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "state_machine_aasm",
+      "category": "behavioral",
+      "target_name": "Order",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 24,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "State machine pattern enforcing verified state transitions and guards.",
+      "evidence": [
+        {
+          "rule_name": "BEHAVIORAL_STATE_MACHINE",
+          "weight": 0.95,
+          "description": "Class 'Order' defines explicit State Machine transitions with guard conditions (AASM)",
+          "location": "benchmarks/ecommerce_platform.rb:24:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "sql_injection_hazard",
+      "category": "security_hazards",
+      "target_name": "SQLInjection",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 109,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Unsanitized raw string interpolation inside SQL queries (where, find_by_sql, order).",
+      "evidence": [
+        {
+          "rule_name": "HAZARD_SQL_INJECTION",
+          "weight": 0.95,
+          "description": "Raw user input interpolated inside ActiveRecord SQL fragment risking SQL Injection: '@orders = Order.where(\"status = '#{params[:status]}'\")'",
+          "location": "benchmarks/ecommerce_platform.rb:109:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "unsafe_eval_code_execution_hazard",
+      "category": "security_hazards",
+      "target_name": "eval",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 115,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Remote code execution vulnerability evaluating untrusted user input via eval or instance_eval.",
+      "evidence": [
+        {
+          "rule_name": "HAZARD_UNSAFE_EVAL",
+          "weight": 0.95,
+          "description": "Direct evaluation of dynamic input via eval / instance_eval risking Remote Code Execution: 'eval(params[:eval_script])'",
+          "location": "benchmarks/ecommerce_platform.rb:115:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "mass_assignment_permit_all_hazard",
+      "category": "security_hazards",
+      "target_name": "params.permit!",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 112,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Bypassing Strong Parameters with params.permit! exposing internal attributes to tampering.",
+      "evidence": [
+        {
+          "rule_name": "HAZARD_MASS_ASSIGNMENT_PERMIT_ALL",
+          "weight": 0.95,
+          "description": "Strong Parameters bypassed via 'params.permit!' exposing model attributes to mass-assignment attacks: 'params.permit!'",
+          "location": "benchmarks/ecommerce_platform.rb:112:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "command_injection_hazard",
+      "category": "security_hazards",
+      "target_name": "CommandInjection",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 118,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.95,
+        "percentage": 95,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Executing unsanitized shell commands via backticks, system(), or Open3.",
+      "evidence": [
+        {
+          "rule_name": "HAZARD_COMMAND_INJECTION",
+          "weight": 0.95,
+          "description": "User parameters interpolated directly into OS shell command execution: '`tar -czf backup.tar.gz #{params[:dir]}`'",
+          "location": "benchmarks/ecommerce_platform.rb:118:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "unvalidated_redirect_open_hazard",
+      "category": "security_hazards",
+      "target_name": "OpenRedirect",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 121,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.9,
+        "percentage": 90,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Open redirect vulnerability redirecting directly to user-supplied params[:url].",
+      "evidence": [
+        {
+          "rule_name": "HAZARD_OPEN_REDIRECT",
+          "weight": 0.9,
+          "description": "Unvalidated open redirect to user-controlled parameter in line: 'redirect_to params[:url]'",
+          "location": "benchmarks/ecommerce_platform.rb:121:1"
+        }
+      ]
+    },
+    {
+      "pattern_type": "n_plus_one_query_hazard",
+      "category": "security_hazards",
+      "target_name": "VulnerableAdminController#list_user_orders",
+      "location": {
+        "file_path": "benchmarks/ecommerce_platform.rb",
+        "line_number": 123,
+        "column_number": 1
+      },
+      "confidence": {
+        "score": 0.88,
+        "percentage": 88,
+        "level": "VERY_HIGH"
+      },
+      "summary": "Iterating over collections accessing association properties without includes/eager_load.",
+      "evidence": [
+        {
+          "rule_name": "HAZARD_N_PLUS_ONE_QUERY",
+          "weight": 0.88,
+          "description": "Potential N+1 database query in method 'VulnerableAdminController#list_user_orders' iterating over records without eager loading (includes/preload)",
+          "location": "benchmarks/ecommerce_platform.rb:123:1"
+        }
+      ]
+    }
+  ]
+}

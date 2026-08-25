@@ -1,0 +1,579 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "DPX-Ruby",
+          "version": "0.1.0",
+          "informationUri": "https://github.com/bivex/DPX-Ruby",
+          "rules": [
+            {
+              "id": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+              "name": "ACTIVESUPPORT_CONCERN",
+              "shortDescription": {
+                "text": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+              },
+              "fullDescription": {
+                "text": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+              },
+              "properties": {
+                "category": "ruby_idiomatic",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-DATA_CLASS_DEFINE",
+              "name": "DATA_CLASS_DEFINE",
+              "shortDescription": {
+                "text": "Immutable value object declaration using Ruby 3.2+ Data.define."
+              },
+              "fullDescription": {
+                "text": "Immutable value object declaration using Ruby 3.2+ Data.define."
+              },
+              "properties": {
+                "category": "ruby_idiomatic",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-REFINEMENT_SCOPED_EXTENSION",
+              "name": "REFINEMENT_SCOPED_EXTENSION",
+              "shortDescription": {
+                "text": "Lexically scoped monkey-patching avoiding global namespace collision."
+              },
+              "fullDescription": {
+                "text": "Lexically scoped monkey-patching avoiding global namespace collision."
+              },
+              "properties": {
+                "category": "ruby_idiomatic",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-SERVICE_OBJECT_INTERACTOR",
+              "name": "SERVICE_OBJECT_INTERACTOR",
+              "shortDescription": {
+                "text": "Encapsulated business workflow following Single Responsibility Principle with standard call method."
+              },
+              "fullDescription": {
+                "text": "Encapsulated business workflow following Single Responsibility Principle with standard call method."
+              },
+              "properties": {
+                "category": "enterprise_rails",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-DRY_MONAD_TRANSACTION",
+              "name": "DRY_MONAD_TRANSACTION",
+              "shortDescription": {
+                "text": "Railway-oriented programming using Dry::Monads Result (Success/Failure) and Do notation."
+              },
+              "fullDescription": {
+                "text": "Railway-oriented programming using Dry::Monads Result (Success/Failure) and Do notation."
+              },
+              "properties": {
+                "category": "enterprise_rails",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-DECORATOR_PRESENTER",
+              "name": "DECORATOR_PRESENTER",
+              "shortDescription": {
+                "text": "View logic isolation wrapping models in presenter decorators (Draper / SimpleDelegator)."
+              },
+              "fullDescription": {
+                "text": "View logic isolation wrapping models in presenter decorators (Draper / SimpleDelegator)."
+              },
+              "properties": {
+                "category": "enterprise_rails",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-SIMPLE_DELEGATOR_DECORATOR",
+              "name": "SIMPLE_DELEGATOR_DECORATOR",
+              "shortDescription": {
+                "text": "Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator."
+              },
+              "fullDescription": {
+                "text": "Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator."
+              },
+              "properties": {
+                "category": "structural",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-GATEWAY_ADAPTER_WRAPPER",
+              "name": "GATEWAY_ADAPTER_WRAPPER",
+              "shortDescription": {
+                "text": "Adapter pattern adapting external third-party API payloads to domain interfaces."
+              },
+              "fullDescription": {
+                "text": "Adapter pattern adapting external third-party API payloads to domain interfaces."
+              },
+              "properties": {
+                "category": "structural",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-COMMAND_ACTIVE_JOB",
+              "name": "COMMAND_ACTIVE_JOB",
+              "shortDescription": {
+                "text": "Command pattern encapsulating asynchronous job execution and background workflows."
+              },
+              "fullDescription": {
+                "text": "Command pattern encapsulating asynchronous job execution and background workflows."
+              },
+              "properties": {
+                "category": "behavioral",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-STATE_MACHINE_AASM",
+              "name": "STATE_MACHINE_AASM",
+              "shortDescription": {
+                "text": "State machine pattern enforcing verified state transitions and guards."
+              },
+              "fullDescription": {
+                "text": "State machine pattern enforcing verified state transitions and guards."
+              },
+              "properties": {
+                "category": "behavioral",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-SQL_INJECTION_HAZARD",
+              "name": "SQL_INJECTION_HAZARD",
+              "shortDescription": {
+                "text": "Unsanitized raw string interpolation inside SQL queries (where, find_by_sql, order)."
+              },
+              "fullDescription": {
+                "text": "Unsanitized raw string interpolation inside SQL queries (where, find_by_sql, order)."
+              },
+              "properties": {
+                "category": "security_hazards",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-UNSAFE_EVAL_CODE_EXECUTION_HAZARD",
+              "name": "UNSAFE_EVAL_CODE_EXECUTION_HAZARD",
+              "shortDescription": {
+                "text": "Remote code execution vulnerability evaluating untrusted user input via eval or instance_eval."
+              },
+              "fullDescription": {
+                "text": "Remote code execution vulnerability evaluating untrusted user input via eval or instance_eval."
+              },
+              "properties": {
+                "category": "security_hazards",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-MASS_ASSIGNMENT_PERMIT_ALL_HAZARD",
+              "name": "MASS_ASSIGNMENT_PERMIT_ALL_HAZARD",
+              "shortDescription": {
+                "text": "Bypassing Strong Parameters with params.permit! exposing internal attributes to tampering."
+              },
+              "fullDescription": {
+                "text": "Bypassing Strong Parameters with params.permit! exposing internal attributes to tampering."
+              },
+              "properties": {
+                "category": "security_hazards",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-COMMAND_INJECTION_HAZARD",
+              "name": "COMMAND_INJECTION_HAZARD",
+              "shortDescription": {
+                "text": "Executing unsanitized shell commands via backticks, system(), or Open3."
+              },
+              "fullDescription": {
+                "text": "Executing unsanitized shell commands via backticks, system(), or Open3."
+              },
+              "properties": {
+                "category": "security_hazards",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-UNVALIDATED_REDIRECT_OPEN_HAZARD",
+              "name": "UNVALIDATED_REDIRECT_OPEN_HAZARD",
+              "shortDescription": {
+                "text": "Open redirect vulnerability redirecting directly to user-supplied params[:url]."
+              },
+              "fullDescription": {
+                "text": "Open redirect vulnerability redirecting directly to user-supplied params[:url]."
+              },
+              "properties": {
+                "category": "security_hazards",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-N_PLUS_ONE_QUERY_HAZARD",
+              "name": "N_PLUS_ONE_QUERY_HAZARD",
+              "shortDescription": {
+                "text": "Iterating over collections accessing association properties without includes/eager_load."
+              },
+              "fullDescription": {
+                "text": "Iterating over collections accessing association properties without includes/eager_load."
+              },
+              "properties": {
+                "category": "security_hazards",
+                "confidence": "VERY_HIGH"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Auditable': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DATA_CLASS_DEFINE",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "[data_class_define] detected on 'OrderData': Immutable value object declaration using Ruby 3.2+ Data.define."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-REFINEMENT_SCOPED_EXTENSION",
+          "ruleIndex": 2,
+          "level": "note",
+          "message": {
+            "text": "[refinement_scoped_extension] detected on 'String': Lexically scoped monkey-patching avoiding global namespace collision."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-SERVICE_OBJECT_INTERACTOR",
+          "ruleIndex": 3,
+          "level": "note",
+          "message": {
+            "text": "[service_object_interactor] detected on 'ProcessOrderService': Encapsulated business workflow following Single Responsibility Principle with standard call method."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DRY_MONAD_TRANSACTION",
+          "ruleIndex": 4,
+          "level": "note",
+          "message": {
+            "text": "[dry_monad_transaction] detected on 'DryMonads': Railway-oriented programming using Dry::Monads Result (Success/Failure) and Do notation."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DECORATOR_PRESENTER",
+          "ruleIndex": 5,
+          "level": "note",
+          "message": {
+            "text": "[decorator_presenter] detected on 'OrderPresenter': View logic isolation wrapping models in presenter decorators (Draper / SimpleDelegator)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-SIMPLE_DELEGATOR_DECORATOR",
+          "ruleIndex": 6,
+          "level": "note",
+          "message": {
+            "text": "[simple_delegator_decorator] detected on 'OrderPresenter': Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-GATEWAY_ADAPTER_WRAPPER",
+          "ruleIndex": 7,
+          "level": "note",
+          "message": {
+            "text": "[gateway_adapter_wrapper] detected on 'StripeGateway': Adapter pattern adapting external third-party API payloads to domain interfaces."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-COMMAND_ACTIVE_JOB",
+          "ruleIndex": 8,
+          "level": "note",
+          "message": {
+            "text": "[command_active_job] detected on 'OrderFulfillmentJob': Command pattern encapsulating asynchronous job execution and background workflows."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-STATE_MACHINE_AASM",
+          "ruleIndex": 9,
+          "level": "note",
+          "message": {
+            "text": "[state_machine_aasm] detected on 'Order': State machine pattern enforcing verified state transitions and guards."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-SQL_INJECTION_HAZARD",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "[sql_injection_hazard] detected on 'SQLInjection': Unsanitized raw string interpolation inside SQL queries (where, find_by_sql, order)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-UNSAFE_EVAL_CODE_EXECUTION_HAZARD",
+          "ruleIndex": 11,
+          "level": "error",
+          "message": {
+            "text": "[unsafe_eval_code_execution_hazard] detected on 'eval': Remote code execution vulnerability evaluating untrusted user input via eval or instance_eval."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 115,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-MASS_ASSIGNMENT_PERMIT_ALL_HAZARD",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "[mass_assignment_permit_all_hazard] detected on 'params.permit!': Bypassing Strong Parameters with params.permit! exposing internal attributes to tampering."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 112,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-COMMAND_INJECTION_HAZARD",
+          "ruleIndex": 13,
+          "level": "error",
+          "message": {
+            "text": "[command_injection_hazard] detected on 'CommandInjection': Executing unsanitized shell commands via backticks, system(), or Open3."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-UNVALIDATED_REDIRECT_OPEN_HAZARD",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "[unvalidated_redirect_open_hazard] detected on 'OpenRedirect': Open redirect vulnerability redirecting directly to user-supplied params[:url]."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 121,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-N_PLUS_ONE_QUERY_HAZARD",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "[n_plus_one_query_hazard] detected on 'VulnerableAdminController#list_user_orders': Iterating over collections accessing association properties without includes/eager_load."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

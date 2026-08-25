@@ -1,0 +1,432 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "DPX-Ruby",
+          "version": "0.1.0",
+          "informationUri": "https://github.com/bivex/DPX-Ruby",
+          "rules": [
+            {
+              "id": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+              "name": "ACTIVESUPPORT_CONCERN",
+              "shortDescription": {
+                "text": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+              },
+              "fullDescription": {
+                "text": "Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+              },
+              "properties": {
+                "category": "ruby_idiomatic",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+              "name": "DYNAMIC_DISPATCH_SEND",
+              "shortDescription": {
+                "text": "Metaprogramming dynamic message dispatch at runtime via send or public_send."
+              },
+              "fullDescription": {
+                "text": "Metaprogramming dynamic message dispatch at runtime via send or public_send."
+              },
+              "properties": {
+                "category": "metaprogramming",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+              "name": "CONSTANT_LOOKUP_RESOLUTION",
+              "shortDescription": {
+                "text": "Dynamic constant reflection resolving class types at runtime via const_get."
+              },
+              "fullDescription": {
+                "text": "Dynamic constant reflection resolving class types at runtime via const_get."
+              },
+              "properties": {
+                "category": "metaprogramming",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-PROTOTYPE_DUP_CLONE",
+              "name": "PROTOTYPE_DUP_CLONE",
+              "shortDescription": {
+                "text": "Prototype pattern creating object duplicates via dup or clone."
+              },
+              "fullDescription": {
+                "text": "Prototype pattern creating object duplicates via dup or clone."
+              },
+              "properties": {
+                "category": "creational",
+                "confidence": "VERY_HIGH"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Devise': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Controllers': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Helpers': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Devise': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Models': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Authenticatable': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'ActiveSupport': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Concern': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 177,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 230,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 194,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 215,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+          "ruleIndex": 2,
+          "level": "note",
+          "message": {
+            "text": "[constant_lookup_resolution] detected on 'const_get': Dynamic constant reflection resolving class types at runtime via const_get."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+          "ruleIndex": 2,
+          "level": "note",
+          "message": {
+            "text": "[constant_lookup_resolution] detected on 'const_get': Dynamic constant reflection resolving class types at runtime via const_get."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 162,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+          "ruleIndex": 2,
+          "level": "note",
+          "message": {
+            "text": "[constant_lookup_resolution] detected on 'const_get': Dynamic constant reflection resolving class types at runtime via const_get."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 225,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-PROTOTYPE_DUP_CLONE",
+          "ruleIndex": 3,
+          "level": "note",
+          "message": {
+            "text": "[prototype_dup_clone] detected on 'dup/clone': Prototype pattern creating object duplicates via dup or clone."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
