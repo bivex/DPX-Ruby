@@ -34,7 +34,46 @@ def test_confidence_levels():
 
 
 def test_pattern_catalog():
-    assert len(PATTERN_CATALOG) == 42
+    assert len(PATTERN_CATALOG) == 51
+    # Verify all 23 GoF patterns are in catalog
+    gof_patterns = [
+        # Creational (5)
+        PatternType.GOF_FACTORY_METHOD,
+        PatternType.GOF_ABSTRACT_FACTORY,
+        PatternType.GOF_BUILDER,
+        PatternType.GOF_PROTOTYPE,
+        PatternType.GOF_SINGLETON,
+        # Structural (7)
+        PatternType.GOF_ADAPTER,
+        PatternType.GOF_BRIDGE,
+        PatternType.GOF_COMPOSITE,
+        PatternType.GOF_DECORATOR,
+        PatternType.GOF_FACADE,
+        PatternType.GOF_FLYWEIGHT,
+        PatternType.GOF_PROXY,
+        # Behavioral (11)
+        PatternType.GOF_CHAIN_OF_RESPONSIBILITY,
+        PatternType.GOF_COMMAND,
+        PatternType.GOF_INTERPRETER,
+        PatternType.GOF_ITERATOR,
+        PatternType.GOF_MEDIATOR,
+        PatternType.GOF_MEMENTO,
+        PatternType.GOF_OBSERVER,
+        PatternType.GOF_STATE,
+        PatternType.GOF_STRATEGY,
+        PatternType.GOF_TEMPLATE_METHOD,
+        PatternType.GOF_VISITOR,
+    ]
+    assert len(gof_patterns) == 23
+    for p in gof_patterns:
+        assert p in PATTERN_CATALOG
+        meta = PATTERN_CATALOG[p]
+        assert meta.category in [
+            PatternCategory.GOF_CREATIONAL,
+            PatternCategory.GOF_STRUCTURAL,
+            PatternCategory.GOF_BEHAVIORAL,
+        ]
+
     for p_type in PatternType:
         assert p_type in PATTERN_CATALOG
         meta = PATTERN_CATALOG[p_type]

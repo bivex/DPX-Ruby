@@ -94,58 +94,100 @@
               }
             },
             {
-              "id": "DPX-RUBY-SIMPLE_DELEGATOR_DECORATOR",
-              "name": "SIMPLE_DELEGATOR_DECORATOR",
+              "id": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+              "name": "DYNAMIC_DISPATCH_SEND",
               "shortDescription": {
-                "text": "Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator."
+                "text": "Metaprogramming dynamic message dispatch at runtime via send or public_send."
               },
               "fullDescription": {
-                "text": "Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator."
+                "text": "Metaprogramming dynamic message dispatch at runtime via send or public_send."
               },
               "properties": {
-                "category": "structural",
+                "category": "metaprogramming",
                 "confidence": "VERY_HIGH"
               }
             },
             {
-              "id": "DPX-RUBY-GATEWAY_ADAPTER_WRAPPER",
-              "name": "GATEWAY_ADAPTER_WRAPPER",
+              "id": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+              "name": "CONSTANT_LOOKUP_RESOLUTION",
               "shortDescription": {
-                "text": "Adapter pattern adapting external third-party API payloads to domain interfaces."
+                "text": "Dynamic constant reflection resolving class types at runtime via const_get."
               },
               "fullDescription": {
-                "text": "Adapter pattern adapting external third-party API payloads to domain interfaces."
+                "text": "Dynamic constant reflection resolving class types at runtime via const_get."
               },
               "properties": {
-                "category": "structural",
+                "category": "metaprogramming",
                 "confidence": "VERY_HIGH"
               }
             },
             {
-              "id": "DPX-RUBY-COMMAND_ACTIVE_JOB",
-              "name": "COMMAND_ACTIVE_JOB",
+              "id": "DPX-RUBY-GOF_PROTOTYPE",
+              "name": "GOF_PROTOTYPE",
               "shortDescription": {
-                "text": "Command pattern encapsulating asynchronous job execution and background workflows."
+                "text": "Creational pattern creating new objects by cloning prototypical instances via dup, clone, or initialize_copy."
               },
               "fullDescription": {
-                "text": "Command pattern encapsulating asynchronous job execution and background workflows."
+                "text": "Creational pattern creating new objects by cloning prototypical instances via dup, clone, or initialize_copy."
               },
               "properties": {
-                "category": "behavioral",
+                "category": "gof_creational",
                 "confidence": "VERY_HIGH"
               }
             },
             {
-              "id": "DPX-RUBY-STATE_MACHINE_AASM",
-              "name": "STATE_MACHINE_AASM",
+              "id": "DPX-RUBY-GOF_ADAPTER",
+              "name": "GOF_ADAPTER",
               "shortDescription": {
-                "text": "State machine pattern enforcing verified state transitions and guards."
+                "text": "Structural pattern converting the interface of a class into another interface expected by clients."
               },
               "fullDescription": {
-                "text": "State machine pattern enforcing verified state transitions and guards."
+                "text": "Structural pattern converting the interface of a class into another interface expected by clients."
               },
               "properties": {
-                "category": "behavioral",
+                "category": "gof_structural",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-GOF_DECORATOR",
+              "name": "GOF_DECORATOR",
+              "shortDescription": {
+                "text": "Structural pattern dynamically attaching additional responsibilities to an object via SimpleDelegator or module wrapping."
+              },
+              "fullDescription": {
+                "text": "Structural pattern dynamically attaching additional responsibilities to an object via SimpleDelegator or module wrapping."
+              },
+              "properties": {
+                "category": "gof_structural",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-GOF_COMMAND",
+              "name": "GOF_COMMAND",
+              "shortDescription": {
+                "text": "Behavioral pattern encapsulating a request as a standalone object with execution methods (ActiveJob, Sidekiq, Interactor)."
+              },
+              "fullDescription": {
+                "text": "Behavioral pattern encapsulating a request as a standalone object with execution methods (ActiveJob, Sidekiq, Interactor)."
+              },
+              "properties": {
+                "category": "gof_behavioral",
+                "confidence": "VERY_HIGH"
+              }
+            },
+            {
+              "id": "DPX-RUBY-GOF_STATE",
+              "name": "GOF_STATE",
+              "shortDescription": {
+                "text": "Behavioral pattern allowing an object to alter its behavior when its internal state changes (AASM, state_machine)."
+              },
+              "fullDescription": {
+                "text": "Behavioral pattern allowing an object to alter its behavior when its internal state changes (AASM, state_machine)."
+              },
+              "properties": {
+                "category": "gof_behavioral",
                 "confidence": "VERY_HIGH"
               }
             },
@@ -259,6 +301,174 @@
           ]
         },
         {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Devise': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Controllers': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Helpers': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Devise': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Models': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Authenticatable': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'ActiveSupport': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-ACTIVESUPPORT_CONCERN",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "[activesupport_concern] detected on 'Concern': Modular Rails mixin pattern with automated dependency resolution and class_methods blocks."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "DPX-RUBY-DATA_CLASS_DEFINE",
           "ruleIndex": 1,
           "level": "note",
@@ -364,20 +574,20 @@
           ]
         },
         {
-          "ruleId": "DPX-RUBY-SIMPLE_DELEGATOR_DECORATOR",
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
           "ruleIndex": 6,
           "level": "note",
           "message": {
-            "text": "[simple_delegator_decorator] detected on 'OrderPresenter': Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator."
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "benchmarks/ecommerce_platform.rb"
+                  "uri": "benchmarks/real_world/helpers.rb"
                 },
                 "region": {
-                  "startLine": 90,
+                  "startLine": 177,
                   "startColumn": 1
                 }
               }
@@ -385,11 +595,179 @@
           ]
         },
         {
-          "ruleId": "DPX-RUBY-GATEWAY_ADAPTER_WRAPPER",
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 6,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 6,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/helpers.rb"
+                },
+                "region": {
+                  "startLine": 230,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 6,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 194,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-DYNAMIC_DISPATCH_SEND",
+          "ruleIndex": 6,
+          "level": "note",
+          "message": {
+            "text": "[dynamic_dispatch_send] detected on 'DynamicDispatch': Metaprogramming dynamic message dispatch at runtime via send or public_send."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 215,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
           "ruleIndex": 7,
           "level": "note",
           "message": {
-            "text": "[gateway_adapter_wrapper] detected on 'StripeGateway': Adapter pattern adapting external third-party API payloads to domain interfaces."
+            "text": "[constant_lookup_resolution] detected on 'const_get': Dynamic constant reflection resolving class types at runtime via const_get."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+          "ruleIndex": 7,
+          "level": "note",
+          "message": {
+            "text": "[constant_lookup_resolution] detected on 'const_get': Dynamic constant reflection resolving class types at runtime via const_get."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 162,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-CONSTANT_LOOKUP_RESOLUTION",
+          "ruleIndex": 7,
+          "level": "note",
+          "message": {
+            "text": "[constant_lookup_resolution] detected on 'const_get': Dynamic constant reflection resolving class types at runtime via const_get."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/concern.rb"
+                },
+                "region": {
+                  "startLine": 225,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-GOF_PROTOTYPE",
+          "ruleIndex": 8,
+          "level": "note",
+          "message": {
+            "text": "[gof_prototype] detected on 'dup/clone': Creational pattern creating new objects by cloning prototypical instances via dup, clone, or initialize_copy."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/real_world/authenticatable.rb"
+                },
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-GOF_ADAPTER",
+          "ruleIndex": 9,
+          "level": "note",
+          "message": {
+            "text": "[gof_adapter] detected on 'StripeGateway': Structural pattern converting the interface of a class into another interface expected by clients."
           },
           "locations": [
             {
@@ -406,11 +784,32 @@
           ]
         },
         {
-          "ruleId": "DPX-RUBY-COMMAND_ACTIVE_JOB",
-          "ruleIndex": 8,
+          "ruleId": "DPX-RUBY-GOF_DECORATOR",
+          "ruleIndex": 10,
           "level": "note",
           "message": {
-            "text": "[command_active_job] detected on 'OrderFulfillmentJob': Command pattern encapsulating asynchronous job execution and background workflows."
+            "text": "[gof_decorator] detected on 'OrderPresenter': Structural pattern dynamically attaching additional responsibilities to an object via SimpleDelegator or module wrapping."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "benchmarks/ecommerce_platform.rb"
+                },
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DPX-RUBY-GOF_COMMAND",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "[gof_command] detected on 'OrderFulfillmentJob': Behavioral pattern encapsulating a request as a standalone object with execution methods (ActiveJob, Sidekiq, Interactor)."
           },
           "locations": [
             {
@@ -427,11 +826,11 @@
           ]
         },
         {
-          "ruleId": "DPX-RUBY-STATE_MACHINE_AASM",
-          "ruleIndex": 9,
+          "ruleId": "DPX-RUBY-GOF_STATE",
+          "ruleIndex": 12,
           "level": "note",
           "message": {
-            "text": "[state_machine_aasm] detected on 'Order': State machine pattern enforcing verified state transitions and guards."
+            "text": "[gof_state] detected on 'Order': Behavioral pattern allowing an object to alter its behavior when its internal state changes (AASM, state_machine)."
           },
           "locations": [
             {
@@ -449,7 +848,7 @@
         },
         {
           "ruleId": "DPX-RUBY-SQL_INJECTION_HAZARD",
-          "ruleIndex": 10,
+          "ruleIndex": 13,
           "level": "error",
           "message": {
             "text": "[sql_injection_hazard] detected on 'SQLInjection': Unsanitized raw string interpolation inside SQL queries (where, find_by_sql, order)."
@@ -470,7 +869,7 @@
         },
         {
           "ruleId": "DPX-RUBY-UNSAFE_EVAL_CODE_EXECUTION_HAZARD",
-          "ruleIndex": 11,
+          "ruleIndex": 14,
           "level": "error",
           "message": {
             "text": "[unsafe_eval_code_execution_hazard] detected on 'eval': Remote code execution vulnerability evaluating untrusted user input via eval or instance_eval."
@@ -491,7 +890,7 @@
         },
         {
           "ruleId": "DPX-RUBY-MASS_ASSIGNMENT_PERMIT_ALL_HAZARD",
-          "ruleIndex": 12,
+          "ruleIndex": 15,
           "level": "error",
           "message": {
             "text": "[mass_assignment_permit_all_hazard] detected on 'params.permit!': Bypassing Strong Parameters with params.permit! exposing internal attributes to tampering."
@@ -512,7 +911,7 @@
         },
         {
           "ruleId": "DPX-RUBY-COMMAND_INJECTION_HAZARD",
-          "ruleIndex": 13,
+          "ruleIndex": 16,
           "level": "error",
           "message": {
             "text": "[command_injection_hazard] detected on 'CommandInjection': Executing unsanitized shell commands via backticks, system(), or Open3."
@@ -533,7 +932,7 @@
         },
         {
           "ruleId": "DPX-RUBY-UNVALIDATED_REDIRECT_OPEN_HAZARD",
-          "ruleIndex": 14,
+          "ruleIndex": 17,
           "level": "error",
           "message": {
             "text": "[unvalidated_redirect_open_hazard] detected on 'OpenRedirect': Open redirect vulnerability redirecting directly to user-supplied params[:url]."
@@ -554,7 +953,7 @@
         },
         {
           "ruleId": "DPX-RUBY-N_PLUS_ONE_QUERY_HAZARD",
-          "ruleIndex": 15,
+          "ruleIndex": 18,
           "level": "error",
           "message": {
             "text": "[n_plus_one_query_hazard] detected on 'VulnerableAdminController#list_user_orders': Iterating over collections accessing association properties without includes/eager_load."

@@ -7,9 +7,9 @@ class PatternCategory(str, Enum):
     RUBY_IDIOMATIC = "ruby_idiomatic"
     ENTERPRISE_RAILS = "enterprise_rails"
     METAPROGRAMMING = "metaprogramming"
-    CREATIONAL = "creational"
-    STRUCTURAL = "structural"
-    BEHAVIORAL = "behavioral"
+    GOF_CREATIONAL = "gof_creational"
+    GOF_STRUCTURAL = "gof_structural"
+    GOF_BEHAVIORAL = "gof_behavioral"
     SECURITY_HAZARDS = "security_hazards"
     SOLID_PRINCIPLES = "solid_principles"
 
@@ -37,25 +37,36 @@ class PatternType(str, Enum):
     MODULE_PREPEND_INTERCEPTION = "module_prepend_interception"
     CONSTANT_LOOKUP_RESOLUTION = "constant_lookup_resolution"
 
-    # GoF Creational
-    FACTORY_OBJECT_FACTORY_BOT = "factory_object_factory_bot"
-    FLUENT_BUILDER_DSL = "fluent_builder_dsl"
-    SINGLETON_MODULE_INCLUDE = "singleton_module_include"
-    PROTOTYPE_DUP_CLONE = "prototype_dup_clone"
+    # --- ALL 23 GANG OF FOUR (GoF) PATTERNS ---
 
-    # GoF Structural
-    SIMPLE_DELEGATOR_DECORATOR = "simple_delegator_decorator"
-    GATEWAY_ADAPTER_WRAPPER = "gateway_adapter_wrapper"
-    FACADE_SUBSYSTEM_ENTRYPOINT = "facade_subsystem_entrypoint"
-    PROXY_METHOD_MISSING_DELEGATE = "proxy_method_missing_delegate"
+    # GoF Creational (5/5)
+    GOF_FACTORY_METHOD = "gof_factory_method"
+    GOF_ABSTRACT_FACTORY = "gof_abstract_factory"
+    GOF_BUILDER = "gof_builder"
+    GOF_PROTOTYPE = "gof_prototype"
+    GOF_SINGLETON = "gof_singleton"
 
-    # GoF Behavioral
-    STRATEGY_PROC_BLOCK_INJECTION = "strategy_proc_block_injection"
-    COMMAND_ACTIVE_JOB = "command_active_job"
-    OBSERVER_ACTIVESUPPORT_NOTIFICATIONS = "observer_activesupport_notifications"
-    STATE_MACHINE_AASM = "state_machine_aasm"
-    TEMPLATE_METHOD_ABSTRACT_HOOK = "template_method_abstract_hook"
-    CHAIN_OF_RESPONSIBILITY_MIDDLEWARE = "chain_of_responsibility_middleware"
+    # GoF Structural (7/7)
+    GOF_ADAPTER = "gof_adapter"
+    GOF_BRIDGE = "gof_bridge"
+    GOF_COMPOSITE = "gof_composite"
+    GOF_DECORATOR = "gof_decorator"
+    GOF_FACADE = "gof_facade"
+    GOF_FLYWEIGHT = "gof_flyweight"
+    GOF_PROXY = "gof_proxy"
+
+    # GoF Behavioral (11/11)
+    GOF_CHAIN_OF_RESPONSIBILITY = "gof_chain_of_responsibility"
+    GOF_COMMAND = "gof_command"
+    GOF_INTERPRETER = "gof_interpreter"
+    GOF_ITERATOR = "gof_iterator"
+    GOF_MEDIATOR = "gof_mediator"
+    GOF_MEMENTO = "gof_memento"
+    GOF_OBSERVER = "gof_observer"
+    GOF_STATE = "gof_state"
+    GOF_STRATEGY = "gof_strategy"
+    GOF_TEMPLATE_METHOD = "gof_template_method"
+    GOF_VISITOR = "gof_visitor"
 
     # Security & Architectural Hazards
     SQL_INJECTION_HAZARD = "sql_injection_hazard"

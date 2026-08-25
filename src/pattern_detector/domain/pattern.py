@@ -131,108 +131,173 @@ PATTERN_CATALOG: Dict[PatternType, PatternMetadata] = {
         default_weight=0.90,
     ),
 
-    # GoF Creational
-    PatternType.FACTORY_OBJECT_FACTORY_BOT: PatternMetadata(
-        pattern_type=PatternType.FACTORY_OBJECT_FACTORY_BOT,
-        name="Factory Object (FactoryBot)",
-        category=PatternCategory.CREATIONAL,
-        description="Factory pattern stamping out test fixtures or complex domain models.",
+    # --- ALL 23 GANG OF FOUR (GoF) PATTERNS ---
+
+    # 1. GoF Creational (5/5)
+    PatternType.GOF_FACTORY_METHOD: PatternMetadata(
+        pattern_type=PatternType.GOF_FACTORY_METHOD,
+        name="GoF Factory Method",
+        category=PatternCategory.GOF_CREATIONAL,
+        description="Creational pattern providing a dedicated creation method or FactoryBot definition for object instantiation.",
         default_weight=0.92,
     ),
-    PatternType.FLUENT_BUILDER_DSL: PatternMetadata(
-        pattern_type=PatternType.FLUENT_BUILDER_DSL,
-        name="Fluent Builder DSL",
-        category=PatternCategory.CREATIONAL,
-        description="Builder pattern providing fluent method chaining for stepwise complex object configuration.",
+    PatternType.GOF_ABSTRACT_FACTORY: PatternMetadata(
+        pattern_type=PatternType.GOF_ABSTRACT_FACTORY,
+        name="GoF Abstract Factory",
+        category=PatternCategory.GOF_CREATIONAL,
+        description="Creational pattern producing families of related or dependent objects without specifying concrete classes.",
+        default_weight=0.92,
+    ),
+    PatternType.GOF_BUILDER: PatternMetadata(
+        pattern_type=PatternType.GOF_BUILDER,
+        name="GoF Builder",
+        category=PatternCategory.GOF_CREATIONAL,
+        description="Creational pattern separating complex object construction from its representation using fluent method chaining.",
         default_weight=0.90,
     ),
-    PatternType.SINGLETON_MODULE_INCLUDE: PatternMetadata(
-        pattern_type=PatternType.SINGLETON_MODULE_INCLUDE,
-        name="Singleton Module Include",
-        category=PatternCategory.CREATIONAL,
-        description="Enforcing single global runtime instance via Ruby standard Singleton module.",
+    PatternType.GOF_PROTOTYPE: PatternMetadata(
+        pattern_type=PatternType.GOF_PROTOTYPE,
+        name="GoF Prototype",
+        category=PatternCategory.GOF_CREATIONAL,
+        description="Creational pattern creating new objects by cloning prototypical instances via dup, clone, or initialize_copy.",
+        default_weight=0.90,
+    ),
+    PatternType.GOF_SINGLETON: PatternMetadata(
+        pattern_type=PatternType.GOF_SINGLETON,
+        name="GoF Singleton",
+        category=PatternCategory.GOF_CREATIONAL,
+        description="Creational pattern ensuring a class has only one global instance via 'include Singleton' or class instance memoization.",
         default_weight=0.92,
     ),
-    PatternType.PROTOTYPE_DUP_CLONE: PatternMetadata(
-        pattern_type=PatternType.PROTOTYPE_DUP_CLONE,
-        name="Prototype (dup/clone)",
-        category=PatternCategory.CREATIONAL,
-        description="Prototype pattern creating object duplicates via dup or clone.",
+
+    # 2. GoF Structural (7/7)
+    PatternType.GOF_ADAPTER: PatternMetadata(
+        pattern_type=PatternType.GOF_ADAPTER,
+        name="GoF Adapter",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern converting the interface of a class into another interface expected by clients.",
+        default_weight=0.92,
+    ),
+    PatternType.GOF_BRIDGE: PatternMetadata(
+        pattern_type=PatternType.GOF_BRIDGE,
+        name="GoF Bridge",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern decoupling an abstraction from its implementation so that the two can vary independently.",
+        default_weight=0.90,
+    ),
+    PatternType.GOF_COMPOSITE: PatternMetadata(
+        pattern_type=PatternType.GOF_COMPOSITE,
+        name="GoF Composite",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern composing objects into tree structures to represent part-whole hierarchies with a uniform interface.",
+        default_weight=0.92,
+    ),
+    PatternType.GOF_DECORATOR: PatternMetadata(
+        pattern_type=PatternType.GOF_DECORATOR,
+        name="GoF Decorator",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern dynamically attaching additional responsibilities to an object via SimpleDelegator or module wrapping.",
+        default_weight=0.92,
+    ),
+    PatternType.GOF_FACADE: PatternMetadata(
+        pattern_type=PatternType.GOF_FACADE,
+        name="GoF Facade",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern providing a unified high-level interface to a set of interfaces in a subsystem.",
+        default_weight=0.92,
+    ),
+    PatternType.GOF_FLYWEIGHT: PatternMetadata(
+        pattern_type=PatternType.GOF_FLYWEIGHT,
+        name="GoF Flyweight",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern using sharing to support large numbers of fine-grained objects efficiently (symbol/string interning, memoized pools).",
+        default_weight=0.90,
+    ),
+    PatternType.GOF_PROXY: PatternMetadata(
+        pattern_type=PatternType.GOF_PROXY,
+        name="GoF Proxy",
+        category=PatternCategory.GOF_STRUCTURAL,
+        description="Structural pattern providing a surrogate or placeholder for another object to control access to it (virtual proxy, method_missing).",
         default_weight=0.90,
     ),
 
-    # GoF Structural
-    PatternType.SIMPLE_DELEGATOR_DECORATOR: PatternMetadata(
-        pattern_type=PatternType.SIMPLE_DELEGATOR_DECORATOR,
-        name="SimpleDelegator Decorator",
-        category=PatternCategory.STRUCTURAL,
-        description="Decorator pattern forwarding unhandled messages to wrapped component via SimpleDelegator.",
-        default_weight=0.92,
+    # 3. GoF Behavioral (11/11)
+    PatternType.GOF_CHAIN_OF_RESPONSIBILITY: PatternMetadata(
+        pattern_type=PatternType.GOF_CHAIN_OF_RESPONSIBILITY,
+        name="GoF Chain of Responsibility",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern passing requests along a chain of handlers/middleware until one handles it.",
+        default_weight=0.95,
     ),
-    PatternType.GATEWAY_ADAPTER_WRAPPER: PatternMetadata(
-        pattern_type=PatternType.GATEWAY_ADAPTER_WRAPPER,
-        name="Gateway Adapter Wrapper",
-        category=PatternCategory.STRUCTURAL,
-        description="Adapter pattern adapting external third-party API payloads to domain interfaces.",
-        default_weight=0.92,
+    PatternType.GOF_COMMAND: PatternMetadata(
+        pattern_type=PatternType.GOF_COMMAND,
+        name="GoF Command",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern encapsulating a request as a standalone object with execution methods (ActiveJob, Sidekiq, Interactor).",
+        default_weight=0.95,
     ),
-    PatternType.FACADE_SUBSYSTEM_ENTRYPOINT: PatternMetadata(
-        pattern_type=PatternType.FACADE_SUBSYSTEM_ENTRYPOINT,
-        name="Facade Subsystem Entrypoint",
-        category=PatternCategory.STRUCTURAL,
-        description="Facade pattern coordinating multiple internal subsystems behind a unified API.",
-        default_weight=0.92,
-    ),
-    PatternType.PROXY_METHOD_MISSING_DELEGATE: PatternMetadata(
-        pattern_type=PatternType.PROXY_METHOD_MISSING_DELEGATE,
-        name="Proxy Method Missing Delegate",
-        category=PatternCategory.STRUCTURAL,
-        description="Proxy pattern lazily intercepting and forwarding messages to target objects.",
+    PatternType.GOF_INTERPRETER: PatternMetadata(
+        pattern_type=PatternType.GOF_INTERPRETER,
+        name="GoF Interpreter",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern defining a representation for grammar along with an interpreter to evaluate expressions (AST/DSL evaluation).",
         default_weight=0.90,
     ),
-
-    # GoF Behavioral
-    PatternType.STRATEGY_PROC_BLOCK_INJECTION: PatternMetadata(
-        pattern_type=PatternType.STRATEGY_PROC_BLOCK_INJECTION,
-        name="Strategy Proc/Block Injection",
-        category=PatternCategory.BEHAVIORAL,
-        description="Strategy pattern injecting interchangeable algorithms via blocks, lambdas, or procs.",
+    PatternType.GOF_ITERATOR: PatternMetadata(
+        pattern_type=PatternType.GOF_ITERATOR,
+        name="GoF Iterator",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern providing a way to access elements of an aggregate object sequentially via 'include Enumerable' and 'each'.",
         default_weight=0.92,
     ),
-    PatternType.COMMAND_ACTIVE_JOB: PatternMetadata(
-        pattern_type=PatternType.COMMAND_ACTIVE_JOB,
-        name="Command ActiveJob",
-        category=PatternCategory.BEHAVIORAL,
-        description="Command pattern encapsulating asynchronous job execution and background workflows.",
-        default_weight=0.95,
-    ),
-    PatternType.OBSERVER_ACTIVESUPPORT_NOTIFICATIONS: PatternMetadata(
-        pattern_type=PatternType.OBSERVER_ACTIVESUPPORT_NOTIFICATIONS,
-        name="Observer (ActiveSupport::Notifications)",
-        category=PatternCategory.BEHAVIORAL,
-        description="Observer / PubSub pattern decoupling event producers from subscribers via ActiveSupport instrumentation.",
-        default_weight=0.95,
-    ),
-    PatternType.STATE_MACHINE_AASM: PatternMetadata(
-        pattern_type=PatternType.STATE_MACHINE_AASM,
-        name="State Machine (AASM)",
-        category=PatternCategory.BEHAVIORAL,
-        description="State machine pattern enforcing verified state transitions and guards.",
-        default_weight=0.95,
-    ),
-    PatternType.TEMPLATE_METHOD_ABSTRACT_HOOK: PatternMetadata(
-        pattern_type=PatternType.TEMPLATE_METHOD_ABSTRACT_HOOK,
-        name="Template Method Abstract Hook",
-        category=PatternCategory.BEHAVIORAL,
-        description="Template Method defining overall algorithm skeleton with subclass hook customizations.",
+    PatternType.GOF_MEDIATOR: PatternMetadata(
+        pattern_type=PatternType.GOF_MEDIATOR,
+        name="GoF Mediator",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern defining an object that encapsulates how a set of objects interact, preventing direct coupling.",
         default_weight=0.90,
     ),
-    PatternType.CHAIN_OF_RESPONSIBILITY_MIDDLEWARE: PatternMetadata(
-        pattern_type=PatternType.CHAIN_OF_RESPONSIBILITY_MIDDLEWARE,
-        name="Chain of Responsibility Middleware",
-        category=PatternCategory.BEHAVIORAL,
-        description="Rack middleware pipeline processing HTTP requests sequentially in a chain.",
+    PatternType.GOF_MEMENTO: PatternMetadata(
+        pattern_type=PatternType.GOF_MEMENTO,
+        name="GoF Memento",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern capturing and externalizing an object's internal state so it can be restored later without violating encapsulation.",
+        default_weight=0.90,
+    ),
+    PatternType.GOF_OBSERVER: PatternMetadata(
+        pattern_type=PatternType.GOF_OBSERVER,
+        name="GoF Observer",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern defining a 1-to-N dependency where state changes automatically notify dependents (ActiveSupport::Notifications, Observable).",
         default_weight=0.95,
+    ),
+    PatternType.GOF_STATE: PatternMetadata(
+        pattern_type=PatternType.GOF_STATE,
+        name="GoF State",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern allowing an object to alter its behavior when its internal state changes (AASM, state_machine).",
+        default_weight=0.95,
+    ),
+    PatternType.GOF_STRATEGY: PatternMetadata(
+        pattern_type=PatternType.GOF_STRATEGY,
+        name="GoF Strategy",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern defining a family of interchangeable algorithms and making them interchangeable at runtime via blocks/procs.",
+        default_weight=0.92,
+    ),
+    PatternType.GOF_TEMPLATE_METHOD: PatternMetadata(
+        pattern_type=PatternType.GOF_TEMPLATE_METHOD,
+        name="GoF Template Method",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern defining the skeleton of an algorithm in an operation, deferring some steps to subclasses via hook methods.",
+        default_weight=0.90,
+    ),
+    PatternType.GOF_VISITOR: PatternMetadata(
+        pattern_type=PatternType.GOF_VISITOR,
+        name="GoF Visitor",
+        category=PatternCategory.GOF_BEHAVIORAL,
+        description="Behavioral pattern representing an operation to be performed on the elements of an object structure using double dispatch (accept / visit).",
+        default_weight=0.92,
     ),
 
     # Security & Architectural Hazards
@@ -282,7 +347,7 @@ PATTERN_CATALOG: Dict[PatternType, PatternMetadata] = {
         pattern_type=PatternType.MISSING_RESPOND_TO_MISSING_HAZARD,
         name="Missing respond_to_missing? Hazard",
         category=PatternCategory.SECURITY_HAZARDS,
-        description="Overriding method_missing without respond_to_missing? breaking respond_to? reflection.",
+        description="Overriding method_missing without respond_to_missing? breaking respond_to? introspection.",
         default_weight=0.92,
     ),
     PatternType.DESTRUCTIVE_MONKEY_PATCHING_HAZARD: PatternMetadata(

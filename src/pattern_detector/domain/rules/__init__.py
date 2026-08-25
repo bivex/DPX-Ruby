@@ -23,24 +23,33 @@ from .metaprogramming_rules import (
     ConstantLookupResolutionRule,
 )
 from .creational_rules import (
-    FactoryObjectFactoryBotRule,
-    FluentBuilderDslRule,
-    SingletonModuleIncludeRule,
-    PrototypeDupCloneRule,
+    FactoryMethodRule,
+    AbstractFactoryRule,
+    BuilderRule,
+    PrototypeRule,
+    SingletonRule,
 )
 from .structural_rules import (
-    SimpleDelegatorDecoratorRule,
-    GatewayAdapterWrapperRule,
-    FacadeSubsystemEntrypointRule,
-    ProxyMethodMissingDelegateRule,
+    AdapterRule,
+    BridgeRule,
+    CompositeRule,
+    DecoratorRule,
+    FacadeRule,
+    FlyweightRule,
+    ProxyRule,
 )
 from .behavioral_rules import (
-    StrategyProcBlockInjectionRule,
-    CommandActiveJobRule,
-    ObserverActiveSupportNotificationsRule,
-    StateMachineAasmRule,
-    TemplateMethodAbstractHookRule,
-    ChainOfResponsibilityMiddlewareRule,
+    ChainOfResponsibilityRule,
+    CommandRule,
+    InterpreterRule,
+    IteratorRule,
+    MediatorRule,
+    MementoRule,
+    ObserverRule,
+    StateRule,
+    StrategyRule,
+    TemplateMethodRule,
+    VisitorRule,
 )
 from .security_rules import (
     SqlInjectionHazardRule,
@@ -62,43 +71,53 @@ from .solid_principles_rules import (
 
 def get_default_rules() -> List[Rule]:
     return [
-        # Idiomatic
+        # Idiomatic (6)
         ActiveSupportConcernRule(),
         PatternMatchingCaseInRule(),
         DataClassDefineRule(),
         RefinementScopedExtensionRule(),
         SorbetRbsTypeSignatureRule(),
         EndlessMethodDefinitionRule(),
-        # Enterprise & Rails
+        # Enterprise & Rails (6)
         ServiceObjectInteractorRule(),
         PolicyObjectAuthorizationRule(),
         FormObjectValidationRule(),
         DryMonadTransactionRule(),
         QueryObjectScopeRule(),
         DecoratorPresenterRule(),
-        # Metaprogramming
+        # Metaprogramming (4)
         DynamicMethodDefinitionRule(),
         DynamicDispatchSendRule(),
         ModulePrependInterceptionRule(),
         ConstantLookupResolutionRule(),
-        # Creational
-        FactoryObjectFactoryBotRule(),
-        FluentBuilderDslRule(),
-        SingletonModuleIncludeRule(),
-        PrototypeDupCloneRule(),
-        # Structural
-        SimpleDelegatorDecoratorRule(),
-        GatewayAdapterWrapperRule(),
-        FacadeSubsystemEntrypointRule(),
-        ProxyMethodMissingDelegateRule(),
-        # Behavioral
-        StrategyProcBlockInjectionRule(),
-        CommandActiveJobRule(),
-        ObserverActiveSupportNotificationsRule(),
-        StateMachineAasmRule(),
-        TemplateMethodAbstractHookRule(),
-        ChainOfResponsibilityMiddlewareRule(),
-        # Security Hazards
+        # ALL 23 GANG OF FOUR (GoF) PATTERNS:
+        # GoF Creational (5)
+        FactoryMethodRule(),
+        AbstractFactoryRule(),
+        BuilderRule(),
+        PrototypeRule(),
+        SingletonRule(),
+        # GoF Structural (7)
+        AdapterRule(),
+        BridgeRule(),
+        CompositeRule(),
+        DecoratorRule(),
+        FacadeRule(),
+        FlyweightRule(),
+        ProxyRule(),
+        # GoF Behavioral (11)
+        ChainOfResponsibilityRule(),
+        CommandRule(),
+        InterpreterRule(),
+        IteratorRule(),
+        MediatorRule(),
+        MementoRule(),
+        ObserverRule(),
+        StateRule(),
+        StrategyRule(),
+        TemplateMethodRule(),
+        VisitorRule(),
+        # Security Hazards (9)
         SqlInjectionHazardRule(),
         UnsafeEvalCodeExecutionHazardRule(),
         MassAssignmentPermitAllHazardRule(),
@@ -108,7 +127,7 @@ def get_default_rules() -> List[Rule]:
         MissingRespondToMissingHazardRule(),
         DestructiveMonkeyPatchingHazardRule(),
         NPlusOneQueryHazardRule(),
-        # SOLID Principles
+        # SOLID Principles (3)
         GodModelMonolithicSrpRule(),
         FatControllerSrpRule(),
         LeakyActiveRecordCouplingRule(),
