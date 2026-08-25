@@ -335,9 +335,42 @@ class HtmlHudExporter(ExporterPort):
         }}
 
         function copyAiSummary() {{
-            const text = JSON.stringify(reportData, null, 2);
+            const btn = document.querySelector('.btn-copy');
+            let text = "# 💎 DPX-Ruby Analysis Findings Summary\\n\\n";
+            text += "- **Target Path**: " + reportData.target_path + "\\n";
+            text += "- **Scanned Files**: " + reportData.scanned_files_count + "\\n";
+            text += "- **Execution Time**: " + reportData.execution_time_seconds.toFixed(4) + "s\\n";
+            text += "- **Total Detections**: " + reportData.total_detections + "\\n\\n";
+
+            text += "## 📊 Category Breakdown\\n";
+            for (const [cat, cnt] of Object.entries(reportData.category_counts || {{}})) {{
+                text += "- **" + cat + "**: " + cnt + "\\n";
+            }}
+
+            text += "\\n## 🔍 Detections & Patterns\\n";
+            reportData.detections.forEach((d, i) => {{
+                const loc = d.location.file_path.split('/').pop() + ":" + d.location.line_number;
+                text += (i + 1) + ". **[" + d.category + "] " + d.pattern_type + "** on `" + d.target_name + "` (" + d.confidence.percentage + "% confidence) at `" + loc + "`\\n";
+                text += "   - *Summary*: " + d.summary + "\\n";
+                if (d.evidence && d.evidence.length > 0) {{
+                    d.evidence.forEach(ev => {{
+                        text += "   - *Evidence*: " + ev.description + "\\n";
+                    }});
+                }}
+            }});
+
             navigator.clipboard.writeText(text).then(() => {{
-                alert('Copied full analysis JSON to clipboard for AI Prompt injection!');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '✔ Copied to Clipboard!';
+                btn.style.background = 'var(--primary)';
+                btn.style.color = '#000';
+                setTimeout(() => {{
+                    btn.innerHTML = orig;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }}, 2500);
+            }}).catch(err => {{
+                console.error('Failed to copy', err);
             }});
         }}
 
