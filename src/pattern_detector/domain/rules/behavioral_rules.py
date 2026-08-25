@@ -251,7 +251,30 @@ class StrategyRule(Rule):
 
     def evaluate(self, model: CodeModel) -> List[Detection]:
         detections: List[Detection] = []
+        provisioner_pattern = re.compile(r'\b(?:vm\.provision|config\.vm\.provision)\s+["\']([a-zA-Z0-9_]+)["\']')
         for file in model.files:
+            # 1. DSL Strategy pattern (Provisioner strategies)
+            for line_idx, line in enumerate(file.raw_content.splitlines(), start=1):
+                m = provisioner_pattern.search(line)
+                if m and not line.strip().startswith("#"):
+                    strat_name = m.group(1)
+                    loc = SourceLocation(file_path=file.file_path, line_number=line_idx)
+                    ev = EvidenceItem(
+                        rule_name="BEHAVIORAL_DSL_STRATEGY",
+                        weight=0.92,
+                        description=f"Pluggable provisioner Strategy pattern '{strat_name}' in line: '{line.strip()}'",
+                        location=loc,
+                    )
+                    detections.append(
+                        Detection(
+                            pattern_type=PatternType.GOF_STRATEGY,
+                            target_name=f"ProvisionerStrategy:{strat_name}",
+                            location=loc,
+                            confidence=Confidence(0.92),
+                            evidence=[ev],
+                        )
+                    )
+            # 2. Method block strategy injection
             for cls in file.classes:
                 for m in cls.methods:
                     if "&block" in m.params or "&strategy" in m.params or "&handler" in m.params or "Strategy" in cls.name:

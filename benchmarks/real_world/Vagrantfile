@@ -1,0 +1,49 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  # 1. Web Tier Multi-Machine Definition (Builder / Factory DSL)
+  config.vm.define "web" do |web|
+    web.vm.hostname = "web.cluster.local"
+    web.vm.network "private_network", ip: "192.168.56.10"
+    web.vm.network "forwarded_port", guest: 80, host: 8080
+
+    web.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 2
+    end
+
+    # Provisioner Strategy (Shell Strategy)
+    web.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+      apt-get install -y nginx postgresql-client
+      systemctl enable --now nginx
+    SHELL
+
+    # Provisioner Strategy (Puppet Provisioner)
+    web.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file = "site.pp"
+      puppet.options = "--verbose"
+    end
+  end
+
+  # 2. Database Tier Definition
+  config.vm.define "db" do |db|
+    db.vm.hostname = "db.cluster.local"
+    db.vm.network "private_network", ip: "192.168.56.20"
+
+    db.vm.provider "virtualbox" do |vb|
+      vb.memory = "4096"
+      vb.cpus = 4
+    end
+
+    # Potential shell command injection hazard if env vars are unquoted
+    db_name = ENV['DB_NAME'] || 'production'
+    db.vm.provision "shell", inline: "createdb -U postgres #{db_name}"
+  end
+end

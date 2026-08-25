@@ -23,12 +23,17 @@ class RegexRubyParser(RubyParserPort):
 
     def parse_code_model(self, paths: List[str]) -> CodeModel:
         model = CodeModel()
-        valid_extensions = {".rb", ".rake", ".builder", ".gemspec", "gemfile", "rakefile", "config.ru"}
+        valid_extensions = {
+            ".rb", ".rake", ".builder", ".gemspec", ".erb",
+            "gemfile", "rakefile", "config.ru", "vagrantfile",
+            "fastfile", "podfile", "capfile", "berksfile",
+            "cheffile", "guardfile", "appraisals", "brewfile",
+        }
         for path in paths:
             if os.path.isfile(path):
                 ext = os.path.splitext(path)[1].lower()
                 base = os.path.basename(path).lower()
-                if ext in valid_extensions or base in valid_extensions:
+                if ext in valid_extensions or base in valid_extensions or "vagrantfile" in base:
                     try:
                         with open(path, "r", encoding="utf-8", errors="replace") as f:
                             content = f.read()
@@ -41,7 +46,7 @@ class RegexRubyParser(RubyParserPort):
                     for file in files:
                         ext = os.path.splitext(file)[1].lower()
                         base = file.lower()
-                        if ext in valid_extensions or base in valid_extensions:
+                        if ext in valid_extensions or base in valid_extensions or "vagrantfile" in base:
                             full_path = os.path.join(root, file)
                             try:
                                 with open(full_path, "r", encoding="utf-8", errors="replace") as f:

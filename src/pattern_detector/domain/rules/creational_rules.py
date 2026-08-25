@@ -92,7 +92,28 @@ class BuilderRule(Rule):
 
     def evaluate(self, model: CodeModel) -> List[Detection]:
         detections: List[Detection] = []
+        builder_dsl_pattern = re.compile(r'\b(?:Vagrant\.configure|config\.vm\.define)\b')
         for file in model.files:
+            # 1. DSL Builder pattern (Vagrantfile / Infrastructure)
+            for line_idx, line in enumerate(file.raw_content.splitlines(), start=1):
+                if builder_dsl_pattern.search(line) and not line.strip().startswith("#"):
+                    loc = SourceLocation(file_path=file.file_path, line_number=line_idx)
+                    ev = EvidenceItem(
+                        rule_name="CREATIONAL_DSL_BUILDER",
+                        weight=0.92,
+                        description=f"Configuration Builder DSL in line: '{line.strip()}'",
+                        location=loc,
+                    )
+                    detections.append(
+                        Detection(
+                            pattern_type=PatternType.GOF_BUILDER,
+                            target_name="VagrantBuilder",
+                            location=loc,
+                            confidence=Confidence(0.92),
+                            evidence=[ev],
+                        )
+                    )
+            # 2. Class Builder pattern
             for cls in file.classes:
                 if "Builder" in cls.name or any(m.name.startswith("with_") or m.name.startswith("set_") for m in cls.methods):
                     loc = SourceLocation(file_path=file.file_path, line_number=cls.line_number)

@@ -76,3 +76,22 @@ def test_regex_ruby_parser():
     service_cls = file_ast.classes[1]
     assert service_cls.name == "CreateUserService"
     assert service_cls.is_service is True
+
+
+def test_vagrantfile_parsing(tmp_path):
+    vagrant_file = tmp_path / "Vagrantfile"
+    vagrant_file.write_text("""
+    Vagrant.configure("2") do |config|
+      config.vm.box = "ubuntu/jammy64"
+      config.vm.define "web" do |web|
+        web.vm.network "forwarded_port", guest: 80, host: 8080
+      end
+    end
+    """)
+
+    parser = RegexRubyParser()
+    model = parser.parse_code_model([str(vagrant_file)])
+    assert len(model.files) == 1
+    assert "Vagrantfile" in model.files[0].file_path
+    assert "Vagrant.configure" in model.files[0].raw_content
+
